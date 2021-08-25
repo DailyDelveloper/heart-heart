@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:htoh/config/palette.dart';
+import 'package:htoh/screens/message_screen/messageHome.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({Key? key}) : super(key: key);
@@ -11,7 +12,7 @@ class BottomNav extends StatefulWidget {
 class _BottomNavState extends State<BottomNav> {
   int _selectedIndex = 0;
   List<Widget> _widgetOptions = [
-    Text("Messages"),
+    MessageHome(),
     Text("Friends"),
     Text("Profile"),
   ];
@@ -47,6 +48,7 @@ class _BottomNavState extends State<BottomNav> {
         unselectedFontSize: 12.0,
         unselectedItemColor: Palette.grayColor,
         onTap: onItemTapped,
+        currentIndex: _selectedIndex,
       ),
     );
   }
